@@ -5,7 +5,7 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 ![demo][demo-image]
 
-# Quick Look
+# Features
 
 #### for Designer
 When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design. 
