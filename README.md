@@ -35,4 +35,4 @@ For designer: you want to use an icon from fontawesome but you need to find a ch
 
 MIT
 
-[demo-image]: http://i.imgur.com/1hjlXrR.png
+[demo-image]: http://i.imgur.com/7Hbgdc2.gif
