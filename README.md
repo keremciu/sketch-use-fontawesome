@@ -7,13 +7,11 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 # Features
 
-> #### for Designer
-> Problem: When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design.
+> A Problem of the Designer: When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design.
 
 - You can easily add it with alias of the icon.
 
-> #### for Developer
-> Problem: When you want to learn the alias of the icon which is added from a designer, you don't need to look all of 585+ icons to find it.
+> A Problem of the Developer: When you want to learn the alias of the icon which is added from a designer, you don't need to look all of 585+ icons to find it.
 
 - You can easily learn it with one click.
 
