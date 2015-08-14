@@ -7,11 +7,11 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 # Quick Look
 
-## =for Designer
+#### for Designer
 When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design. 
 - You can easily add it with alias of the icon.
 
-## =for Developer
+#### for Developer
 When you want to learn the alias of the icon which is added from a designer.
 - You can easily learn it with one click.
 
@@ -23,13 +23,13 @@ When you want to learn the alias of the icon which is added from a designer.
 
 # Usage
 
-## Usage - for designer
+#### for designer
 
 1. Insert a text layer in sketch document.
 2. Select "Add Icon with Alias" under the plugin in `Plugins` menu.
 3. Write the alias of icon which is want you add.
 
-# Usage - for developer
+#### for developer
 
 1. Select the text layer of icon.
 2. Select "Get Alias of Icon" under the plugin in `Plugins` menu.
