@@ -1,18 +1,19 @@
 sketch-use-fontawesome
 =================
 
-Its a nice plugin to use fontawesome in Sketch for frontend developers and designers!
-
-It will be helped you when you use font awesome font.
-
-
-For frontend developer: a designer used an icon, how can you learn alias of the icon?
-- yep, true. you can learn it with this plugin only one click!
-
-For designer: you want to use an icon from fontawesome but you need to find a cheatsheet to copy it in your design.
-- yep, you can add an icon with only alias not with a cheatsheet!
+Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 ![demo][demo-image]
+
+# Quick Look
+
+## =for Designer
+When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design. 
+- You can easily add it with alias of the icon.
+
+## =for Developer
+When you want to learn the alias of the icon which is added from a designer.
+- You can easily learn it with one click.
 
 # Install
 
@@ -20,16 +21,22 @@ For designer: you want to use an icon from fontawesome but you need to find a ch
 2. Extract and rename folder to what would you like.
 3. Put the folder in your Sketch plugin folder (Use `Plugins > Reveal Plugins Folder` to find the plugin folder).
 
-
 # Usage
 
-1. Select the plugin in `Plugins` menu and watch how it works.
-2.
+## Usage - for designer
 
+1. Insert a text layer in sketch document.
+2. Select "Add Icon with Alias" under the plugin in `Plugins` menu.
+3. Write the alias of icon which is want you add.
+
+# Usage - for developer
+
+1. Select the text layer of icon.
+2. Select "Get Alias of Icon" under the plugin in `Plugins` menu.
 
 # Note
 
-
+It will be helped you when you use font awesome font. I'll be add some functions, one of them: you can add icon from font awesome icon list.
 
 # License
 
