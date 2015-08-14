@@ -26,13 +26,13 @@ When you want to learn the alias of the icon which is added from a designer.
 #### for designer
 
 1. Insert a text layer in sketch document.
-2. Select "Add Icon with Alias" under the plugin in `Plugins` menu.
+2. Select `Add Icon with Alias` under the plugin in `Plugins` menu.
 3. Write the alias of icon which is want you add.
 
 #### for developer
 
 1. Select the text layer of icon.
-2. Select "Get Alias of Icon" under the plugin in `Plugins` menu.
+2. Select `Get Alias of Icon` under the plugin in `Plugins` menu.
 
 # Note
 
