@@ -8,14 +8,14 @@ function getHexcode(selector) {
     var code = selector.charCodeAt(0);
     var codeHex = code.toString(16);
     while (codeHex.length < 4) {
-        codeHex = "0" + codeHex;
+        codeHex = '0' + codeHex;
     }
     return codeHex;
 }
 
 // get icon name
 function getIconalias(unicode, data) {
-	var result = "";
+	var result = '';
 	for (var i=0 ; i < data.icons.length; i++)
 	{
 		// compare json unicodes with unicode of our text layer
@@ -40,6 +40,5 @@ if (layer) {
     var alias = getIconalias(hexcode,data);
     // show it
     var app = [NSApplication sharedApplication];
-    [app displayDialog:"Copy it: "+alias withTitle:"The alias of icon: "+ alias]
-    //[doc askForUserInput:"What "+ alias +" name?" initialValue:""]
+    [app displayDialog:'Copy it: '+alias withTitle: 'The alias of icon: '+ alias]
 }

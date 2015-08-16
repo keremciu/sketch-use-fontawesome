@@ -6,7 +6,7 @@ var data = @import 'icons.json';
 // get icon unicode
 function getUnicode(alias, data) {
 
-    var result = "";
+    var result = '';
     for (var i=0 ; i < data.icons.length; i++)
     {
         // compare json id with id of our text layer
@@ -35,11 +35,11 @@ var layer=selection.firstObject();
 
 if (layer) { 
     // get alias from the input
-    var alias = [doc askForUserInput:"What is the alias of icon?" initialValue:""];
+    var alias = [doc askForUserInput: 'What is the alias of icon?' initialValue: ''];
     // get hexcode of alias
     var hexcode = getUnicode(alias, data);
     // set alias to name of the layer
-    [layer setName:alias];
+    [layer setName:alias + ' icon'];
     // set escaped unicode
     [layer setStringValue: escape(hexcode)];
     // set fontawesome font
