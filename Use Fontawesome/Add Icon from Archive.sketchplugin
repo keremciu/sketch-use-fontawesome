@@ -3,29 +3,20 @@
 // it has a wrapper variable which called 'data'
 var data = @import 'icons.json';
 
-// var myHash = {};
-// myHash['rabbit'] = 'carrots';
-// myHash['dog'] = 'bone';
-// document.write('Mybit eats ' + myHash['rabbit']);
-
 // get icon unicode
-function getIcons(data) {
+function getIconsWithNames(data) {
     var icons = [];
-    //NSString* myNSString = @"foo"; 
-    NSMutableArray theResultArray = [[NSMutableArray alloc] init];
-    
+    var names = [];
+
     for (var i=0 ; i < data.icons.length; i++)
     {
       var hexcode = escape('\\u' + data.icons[i].unicode);
-      //var name = '\\u' + data.icons[i].["id"];
-      var name = "a"+i;
-      //icons.push(hexcode);
-      [theResultArray insertObject:hexcode];
-      //icons[name] = hexcode;
-      //icons[name] = escape(hexcode);
+      var icon_name = data.icons[i]["id"] + " icon";
+      names.push(icon_name);
+      icons.push(hexcode);
     }
 
-    return theResultArray;
+    return [icons, names];
 }
 
 // escape hexcode
@@ -37,14 +28,14 @@ function escape(x) {
     return unescape(x);
 }
 
-function iconArchive(msg, items, selectedItemIndex){
+function iconArchive(msg, icons, names, selectedItemIndex){
   selectedItemIndex = selectedItemIndex || 0
 
   var accessory = [[NSComboBox alloc] initWithFrame:NSMakeRect(15,15,100,50)]
   [accessory setFont:[NSFont fontWithName:@"FontAwesome" size:24.0]];
   [accessory setItemHeight:"50.0"];
   [accessory setBackgroundColor: [NSColor whiteColor]];
-  [accessory addItemsWithObjectValues:items]
+  [accessory addItemsWithObjectValues:icons]
   [accessory selectItemAtIndex:selectedItemIndex]
   [accessory setEditable:"NULL"];
 
@@ -55,10 +46,11 @@ function iconArchive(msg, items, selectedItemIndex){
   [alert setAccessoryView:accessory]
 
   var responseCode = [alert runModal]
-  var index = [accessory indexOfSelectedItem]
+  var selected_index = [accessory indexOfSelectedItem]
+  var icon_name = names[selected_index]
   var icon = [accessory objectValueOfSelectedItem]
 
-  return [responseCode, icon]
+  return [responseCode, icon, icon_name]
 }
 
 // select the text layer
@@ -66,15 +58,15 @@ var layer=selection.firstObject();
 
 if (layer) { 
     // get icon list
-    var icons = getIcons(data);
+    var icons = getIconsWithNames(data);
     // get alias from the input
-    var select = iconArchive('Choose an icon',icons, 1);
+    var select = iconArchive('Choose an icon',icons[0], icons[1], 1);
 
     if (select[0] == "1000") {
-      // set name
-      //[layer setName: select[0]];
       // set escaped unicode
       [layer setStringValue: select[1]];
+      // set name
+      [layer setName: select[2]];
       // set fontawesome font
       [layer setFontPostscriptName:'FontAwesome'];
     }
