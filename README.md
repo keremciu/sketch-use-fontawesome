@@ -48,7 +48,13 @@ It will be helped you only when you use font awesome font.
 
 ~~I'll be add some functions, one of them: you can add icon from font awesome icon list.~~
 
-Do you have any suggestion? it would be so good.
+Do you have any suggestion? it would be so nice.
+
+# Next steps
+
+- I will add "icon categories" in "Add icon from Archive". I'll be using it to filter icons.
+- I need to delete unnecessary codes.
+- I need to add more annotations and good instructions.
 
 # License
 
