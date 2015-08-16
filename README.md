@@ -4,7 +4,7 @@ sketch-use-fontawesome
 Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 # New feature: Select an icon from Archive
-![demo][demo-image]
+![demo][newdemo-image]
 
 ![demo][demo-image]
 
