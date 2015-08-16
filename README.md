@@ -40,6 +40,8 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 It will be helped you when you use font awesome font. I'll be add some functions, one of them: you can add icon from font awesome icon list. Do you have any suggestion? it would be so good.
 
+I've added icon list
+
 # License
 
 MIT
