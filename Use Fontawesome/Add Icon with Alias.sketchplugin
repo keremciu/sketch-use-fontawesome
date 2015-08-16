@@ -12,17 +12,7 @@ function getUnicode(alias, data) {
         // compare json id with id of our text layer
         if (data.icons[i]['id'] == alias) {
             // if there is a match, get hexcode
-            var hexcode = data.icons[i].unicode;
-            hexcode = hexcode.toString(16);
-            while (hexcode.length < 4) {
-                hexcode = "0" + hexcode;
-            }
-            var coded = "&#x" + hexcode + ";";
-
             var newcode = '\\u' + data.icons[i].unicode;
-            //newcode.replace(/\"/g, '|');
-
-            //'\'' + data.icons[i].unicode;
             // go add it to result array.
             result = newcode;
         }
