@@ -5,7 +5,10 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 # New feature: Select an icon from Archive
 ![demo][newdemo-image]
-Note: yep, I know it doesn't look good but I found this solution(NsComboBox) to choose an icon.
+> Note: yep, I know it doesn't look good but I found this solution(NsComboBox) to choose an icon.
+
+
+=================
 ![demo][demo-image]
 
 # Features
