@@ -3,6 +3,9 @@ sketch-use-fontawesome
 
 Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
+# New feature: Select an icon from Archive
+![demo][demo-image]
+
 ![demo][demo-image]
 
 # Features
@@ -47,3 +50,4 @@ I've added icon list
 MIT
 
 [demo-image]: http://i.imgur.com/7Hbgdc2.gif
+[newdemo-image]: http://i.imgur.com/14cAdjI.gif
