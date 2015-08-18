@@ -29,6 +29,10 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 2. Extract and rename folder to what would you like.
 3. Put the folder in your Sketch plugin folder (Use `Plugins > Reveal Plugins Folder` to find the plugin folder).
 
+# Dependencies
+
+1. You need to install fontawesome font to your os system. You can download from here: https://github.com/FortAwesome/Font-Awesome/raw/master/fonts/FontAwesome.otf
+
 # Usage
 
 #### for designer
