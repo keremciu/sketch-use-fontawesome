@@ -56,6 +56,7 @@ Do you have any suggestion? it would be so nice.
 
 # Next steps
 
+- I'm trying to build a Clean UI for archive view. We'll select icons from the tableview(nstableview).
 - I will add "icon categories" in "Add icon from Archive". I'll be using it to filter icons.
 - I need to delete unnecessary codes.
 - I need to add more annotations and good instructions.
