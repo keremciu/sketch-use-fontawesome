@@ -20,7 +20,6 @@ var onRun = function(context) {
 
   var searchbox = [[NSTextField alloc] initWithFrame:NSMakeRect(40,175,150,24)]
   [searchbox setBackgroundColor: [NSColor clearColor]];
-  [searchbox setTextColor:[NSColor purpleColor]]
   [content addSubview:searchbox]
 
   // copy button for icon name
@@ -30,12 +29,12 @@ var onRun = function(context) {
   // submit button layer
   var buttonlayer = [CATextLayer layer]
   [buttonlayer setBackgroundColor:[NSColor blackColor]]
-  [buttonlayer setForegroundColor:[NSColor purpleColor]]
+  [buttonlayer setForegroundColor:CGColorCreateGenericRGB(215/255, 159/255, 0/255, 1.0)]
   [buttonlayer setFontSize:18];
 
   // [buttonlayer setFont:[NSFont boldSystemFontOfSize:12]]
   buttonlayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
-  buttonlayer.string = "Add/Change Icon"
+  buttonlayer.string = "+ Add/Change Icon"
   [submitButton setLayer:buttonlayer]
   [submitButton setCOSJSTargetFunction:function(sender) {
     [wrapper orderOut:nil]

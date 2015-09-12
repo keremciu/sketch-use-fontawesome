@@ -40,11 +40,11 @@ var onRun = function(context) {
       var content = mainwindow[1]
 
       // copy button for icon name
-      copybutton1 = Library.components.copy(icon_name,NSMakeRect(400, 220, 100, 30))
+      copybutton1 = Library.components.copy(icon_name,NSMakeRect(400, 290, 100, 30))
       [content addSubview:copybutton1]
 
       // copy button for html wrapper icon
-      copybutton2 = Library.components.copy(wrappedicon,NSMakeRect(400, 150, 100, 30))
+      copybutton2 = Library.components.copy(wrappedicon,NSMakeRect(400, 190, 100, 30))
       [content addSubview:copybutton2]
 
       // copy button for icon unicode
@@ -52,7 +52,7 @@ var onRun = function(context) {
       [content addSubview:copybutton3]
 
       // create a code area
-      var iconCode = [[NSTextField alloc] initWithFrame:NSMakeRect(40, 150, 240, 30)]
+      var iconCode = [[NSTextField alloc] initWithFrame:NSMakeRect(25, 190, 240, 30)]
       [iconCode setEditable:false]
       [iconCode setBezeled:true]
       [iconCode setBezelStyle:NSRoundedBezelStyle]
@@ -61,7 +61,7 @@ var onRun = function(context) {
       [content addSubview:iconCode]
 
       // show icon
-      var iconField = [[NSTextField alloc] initWithFrame:NSMakeRect(40, 70, 300, 50)]
+      var iconField = [[NSTextField alloc] initWithFrame:NSMakeRect(25, 70, 300, 50)]
       [iconField setEditable:false]
       [iconField setBordered:false]
       [iconField setDrawsBackground:false]

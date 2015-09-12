@@ -1,7 +1,7 @@
 @import "library.cocoascript";
 
 var onRun = function(context) {
-
+https://github.com/matt-curtis/MochaJSDelegate/
   var doc = context.document       // the current document (MSDocument)
   var plugin = context.plugin      // the plugin (MSPluginBundle)
   var page = [doc currentPage]     // the current page (MSPage)
@@ -10,70 +10,49 @@ var onRun = function(context) {
   // call getIcons function from library file.
   var icons = Library.getIcons(icon_source)
   var icon_list = Library.iconValues(icons)
-
-  // var dataSource = {
-  //     objectValueForItemAtIndex: function(foo,bar){
-  //       log(foo)
-  //       log(bar)
-  //     },
-  //     numberOfItemsInComboBox: function(){
-  //       return icon_list[0].length;
-  //     }
-  // }
-
-  var dataSource = {
-      objectValueForItemAtIndex: function(index){
-        return icon_list[0][index];
-      },
-      numberOfItemsInComboBox: function(){
-        return icon_list[0].length;
-      }
-  }
-
-  // log("asdfasdfasfsdf")
-  log(dataSource.objectValueForItemAtIndex)
-
-  // var dataSource = [[NSTableViewDataSource alloc] init]
-
+  
   // create a wrapper window
-  var mainwindow = Library.components.window("Font Awesome - Add an icon from table", "Choose an icon")
+  var mainwindow = Library.components.window("Font Awesome - Add an icon with combobox", "Choose an icon")
   var wrapper = mainwindow[0]
   var content = mainwindow[1]
 
   var selectedItemIndex = selectedItemIndex || 0
 
-  var tableContainer = [[NSScrollView alloc] initWithFrame:NSMakeRect(50,50,364,150)]
-  var tableView = [[NSTableView alloc] initWithFrame:NSMakeRect(0, 0, 364, 150)];
-  // column1 = [[NSTableColumn alloc] initWithIdentifier:@"Col1"];
-  // [tableView addTableColumn:column1];
+  // create combobox
+  var selectbox = [[NSComboBox alloc] initWithFrame:NSMakeRect(50,160,100,50)]
+  [selectbox setFont:[NSFont fontWithName:@'FontAwesome' size:24.0]]
+  [selectbox setBackgroundColor: [NSColor clearColor]];
+  [selectbox setTextColor:[NSColor blackColor]]
+  [selectbox addItemsWithObjectValues:icon_list[0]]
+  [selectbox setItemHeight:50]
+  [selectbox setButtonBordered:false]
+  [selectbox setIntercellSpacing:NSMakeSize(50.0, 30.0)]
+  [selectbox selectItemAtIndex:selectedItemIndex]
+  [selectbox setEditable:false];
+  [content addSubview:selectbox]
 
-  [tableView setDataSource:dataSource];
-
-  [tableContainer setDocumentView:tableView];
-  [tableContainer setHasVerticalScroller:true];
-  [content addSubview:tableContainer]
   // copy button for icon name
   submitButton = Library.components.submit("Submit",NSMakeRect(200, 147, 200, 50))
   submitButton.setWantsLayer(true)
   // submit button layer
   var buttonlayer = [CATextLayer layer]
   [buttonlayer setBackgroundColor:[NSColor blackColor]]
-  [buttonlayer setForegroundColor:[NSColor purpleColor]]
+  [buttonlayer setForegroundColor:CGColorCreateGenericRGB(215/255, 159/255, 0/255, 1.0)]
   [buttonlayer setFontSize:18];
   // [buttonlayer setFont:[NSFont boldSystemFontOfSize:12]]
   buttonlayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
-  buttonlayer.string = "Add/Change Icon"
+  buttonlayer.string = "+ Add/Change Icon"
   [submitButton setLayer:buttonlayer]
   [submitButton setCOSJSTargetFunction:function(sender) {
     [wrapper orderOut:nil]
     [NSApp stopModalWithCode:NSOKButton]
   }];
-  // [content addSubview:submitButton]
+  [content addSubview:submitButton]
 
   var response = [NSApp runModalForWindow:wrapper];
-  var selected_icon = "a"
+  var selected_icon = [selectbox indexOfSelectedItem]
   var icon_name     = icon_list[1][selected_icon]
-  var get_selected_icon = "b"
+  var get_selected_icon = [selectbox objectValueOfSelectedItem]
 
   // if is the response is ok, add icon to the layer
   if (response == NSOKButton) {

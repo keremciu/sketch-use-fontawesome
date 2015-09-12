@@ -1,7 +1,7 @@
 @import "library.cocoascript";
 
 var onRun = function(context) {
-https://github.com/matt-curtis/MochaJSDelegate/
+
   var doc = context.document       // the current document (MSDocument)
   var plugin = context.plugin      // the plugin (MSPluginBundle)
   var page = [doc currentPage]     // the current page (MSPage)
@@ -10,49 +10,52 @@ https://github.com/matt-curtis/MochaJSDelegate/
   // call getIcons function from library file.
   var icons = Library.getIcons(icon_source)
   var icon_list = Library.iconValues(icons)
-  
+  var icon_count = icon_list[0].length;
+  // row count and height calculate
+  var row_count = Math.ceil(icon_count / 15);
+  var list_height = Math.ceil(row_count * 50);
+
   // create a wrapper window
-  var mainwindow = Library.components.window("Font Awesome - Add an icon from list", "Choose an icon")
+  var mainwindow = Library.components.window("Font Awesome - Add an icon from table", "Choose an icon")
   var wrapper = mainwindow[0]
   var content = mainwindow[1]
 
   var selectedItemIndex = selectedItemIndex || 0
 
-  var dataSource = {
-      comboBox_objectValueForItemAtIndex: function(foo,bar){
-      log(foo)
-      log(bar)
-      },
-      numberOfItemsInComboBox: function(){
-      return 10;
-      }
-  };
+  var listContainer = [[NSScrollView alloc] initWithFrame:NSMakeRect(25,25,554,260)]
 
-  var selectbox = [[NSComboBox alloc] initWithFrame:NSMakeRect(50,160,100,50)]
-  [selectbox setFont:[NSFont fontWithName:@'FontAwesome' size:24.0]];
-  [selectbox setBackgroundColor: [NSColor clearColor]];
-  [selectbox setTextColor:[NSColor purpleColor]]
-  [selectbox addItemsWithObjectValues:icon_list[0]]
-  // selectbox.setUsesDataSource(true);
-  // selectbox.setDataSource(dataSource);
-  [selectbox setItemHeight:50]
-  [selectbox setButtonBordered:false]
-  [selectbox setIntercellSpacing:NSMakeSize(50.0, 30.0)]
-  [selectbox selectItemAtIndex:selectedItemIndex]
-  [selectbox setEditable:false];
-  [content addSubview:selectbox]
+  var prototype = [[NSButtonCell alloc] init];
+  [prototype setButtonType:NSToggleButton];
+  [prototype setTitle:"-"];
+  // [prototype setAlternateTitle:"3"];
+  [prototype setBezeled:true]
+  [prototype setBezelStyle:NSThickSquareBezelStyle]
+
+  var iconMatrix = [[NSMatrix alloc] initWithFrame:NSMakeRect(0, 45, 545, list_height)
+    mode:NSListModeMatrix prototype:prototype numberOfRows:row_count numberOfColumns:15];
+  var cellArray = [iconMatrix cells];
+  [iconMatrix setFont:[NSFont fontWithName:@'FontAwesome' size:20.0]]
+  [iconMatrix setCellSize:NSMakeSize(47, 47)];
+  [iconMatrix setIntercellSpacing:NSMakeSize(2, 2)];
+  for (var k=0; k < icon_count; k++)
+  {
+      [[cellArray objectAtIndex:k] setTitle:icon_list[0][k]];
+      [[cellArray objectAtIndex:k] setAlternateTitle:""+k];
+  }
+  [listContainer setDocumentView:iconMatrix];
+  [listContainer setHasVerticalScroller:true];
+  [content addSubview:listContainer]
 
   // copy button for icon name
-  submitButton = Library.components.submit("Submit",NSMakeRect(200, 147, 200, 50))
+  submitButton = Library.components.submit("Submit",NSMakeRect(440, 274, 200, 50))
   submitButton.setWantsLayer(true)
   // submit button layer
   var buttonlayer = [CATextLayer layer]
   [buttonlayer setBackgroundColor:[NSColor blackColor]]
-  [buttonlayer setForegroundColor:[NSColor purpleColor]]
-  [buttonlayer setFontSize:18];
-  // [buttonlayer setFont:[NSFont boldSystemFontOfSize:12]]
+  [buttonlayer setForegroundColor:CGColorCreateGenericRGB(215/255, 159/255, 0/255, 1.0)]
+  [buttonlayer setFontSize:16]
   buttonlayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
-  buttonlayer.string = "Add/Change Icon"
+  buttonlayer.string = "+ Add/Change Icon"
   [submitButton setLayer:buttonlayer]
   [submitButton setCOSJSTargetFunction:function(sender) {
     [wrapper orderOut:nil]
@@ -61,9 +64,9 @@ https://github.com/matt-curtis/MochaJSDelegate/
   [content addSubview:submitButton]
 
   var response = [NSApp runModalForWindow:wrapper];
-  var selected_icon = [selectbox indexOfSelectedItem]
+  var selected_icon = [[iconMatrix selectedCell] alternateTitle]
   var icon_name     = icon_list[1][selected_icon]
-  var get_selected_icon = [selectbox objectValueOfSelectedItem]
+  var get_selected_icon = [[iconMatrix selectedCell] title];
 
   // if is the response is ok, add icon to the layer
   if (response == NSOKButton) {

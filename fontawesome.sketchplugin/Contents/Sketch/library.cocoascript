@@ -29,7 +29,7 @@ var Library = {
     for (var i=0 ; i < [list count]; i++)
     {
       var hexcode = this.escapeUnicode('\\u' + list[i]["unicode"]);
-      var icon_name = list[i]["id"] + ' icon';
+      var icon_name = list[i]["id"] + ' - fontawesome';
       names.push(icon_name);
       icons.push(hexcode);
     }
@@ -158,25 +158,25 @@ var Library = {
       body.setWantsLayer(true)
 
       // create a header
-      var header = [[NSView alloc] initWithFrame:NSMakeRect(x, y+280, 540, 48)]
+      var header = [[NSView alloc] initWithFrame:NSMakeRect(x, y+352, 600, 48)]
       header.setWantsLayer(true)
 
       // header fixer
-      var headerfixer = [[NSView alloc] initWithFrame:NSMakeRect(0, 280, 540, 20)]
+      var headerfixer = [[NSView alloc] initWithFrame:NSMakeRect(0, 352, 600, 20)]
       headerfixer.setWantsLayer(true)
       var fixbg = [CALayer layer]
-      [fixbg setBackgroundColor:CGColorCreateGenericRGB(240/255, 232/255, 191/255, 1.0)]
+      [fixbg setBackgroundColor:CGColorCreateGenericRGB(255/255, 189/255, 0/255, 1.0)]
       [headerfixer setLayer:fixbg]
 
       // create a content area
-      var content = [[NSView alloc] initWithFrame:NSMakeRect(x, y, 540, 320)]
+      var content = [[NSView alloc] initWithFrame:NSMakeRect(x, y, 600, 400)]
       content.setWantsLayer(true)
 
       [content addSubview:headerfixer]
 
       // create a layer to content
       var contentLayer = [CALayer layer]
-      [contentLayer setBackgroundColor:CGColorCreateGenericRGB(250/255, 250/255, 250/255, 1.0)] //RGB plus Alpha Channel
+      [contentLayer setBackgroundColor:CGColorCreateGenericRGB(255/255, 255/255, 255/255, 1.0)] //RGB plus Alpha Channel
       [contentLayer setMasksToBounds: true]
       [contentLayer setCornerRadius: 6.0]
       [content setLayer:contentLayer]
@@ -196,26 +196,25 @@ var Library = {
 
       // title add to header
       var titleField = Library.components.title(title,14,[NSColor blackColor],NSMakeRect(16, 5, 400, 30));
-      [titleField setAlphaValue:0.5]
+      [titleField setAlphaValue:0.6]
       [header addSubview:titleField]
 
       // set background to header
       var headerBG = [CALayer layer]
-      [headerBG setBackgroundColor:CGColorCreateGenericRGB(240/255, 232/255, 191/255, 1.0)] //RGB plus Alpha Channel
+      [headerBG setBackgroundColor:CGColorCreateGenericRGB(255/255, 189/255, 0/255, 1.0)] //RGB plus Alpha Channel
       [headerBG setMasksToBounds:true]
       [headerBG setCornerRadius:6.0]
       [header setClipsToBounds:true]
       [header setLayer:headerBG]
 
       // subtitle in window
-      var subTitleField = Library.components.title(subtitle,22,[NSColor blackColor],NSMakeRect(x+40, y+220, 540, 30));
+      var subTitleField = Library.components.title(subtitle,22,[NSColor blackColor],NSMakeRect(x+25, y+300, 300, 30));
       [[wrapper contentView] addSubview:subTitleField]
 
       // create a cancel button
       var cancelbuttonimage = [NSImage imageNamed:NSImageNameStopProgressTemplate];
-
       // call custom function to build cancel button
-      var cancelButton = Library.components.custombutton(cancelbuttonimage,NSMakeRect(496, 5, 36, 36));
+      var cancelButton = Library.components.custombutton(cancelbuttonimage,NSMakeRect(556, 5, 36, 36));
       [cancelButton setCOSJSTargetFunction:function(sender) {
           [wrapper orderOut:nil]
           [NSApp stopModal]
@@ -224,9 +223,9 @@ var Library = {
       [header addSubview:cancelButton]
 
       // create a help button
-      var helpbuttonimage = [NSImage imageNamed:NSImageNamePathTemplate];
+      var helpbuttonimage = [NSImage imageNamed:NSImageNameBookmarksTemplate];
       // call custom function to build help button
-      var helpButton = Library.components.custombutton(helpbuttonimage,NSMakeRect(464, 5, 36, 36));
+      var helpButton = Library.components.custombutton(helpbuttonimage,NSMakeRect(520, 5, 36, 36));
       [helpButton setCOSJSTargetFunction:function(sender) {
           var url = [NSURL URLWithString:@"https://github.com/keremciu/sketch-use-fontawesome/blob/master/HELP.md"]
           if( ![[NSWorkspace sharedWorkspace] openURL:url] ){
@@ -270,7 +269,7 @@ var Library = {
       [customButton setTitle:nil]
       [customButton setBordered:false]
       [customButton setBezelStyle:NSCircularBezelStyle]
-      [customButton setAlphaValue:0.5]
+      [customButton setAlphaValue:0.8]
       [customButton setAction:"callAction:"]
       return customButton;
     },

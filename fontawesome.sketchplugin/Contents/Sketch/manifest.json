@@ -1,5 +1,5 @@
 {
-  "name" : "Font Awesome",
+  "name" : "Font Awesomeasdfasdfs",
   "description" : "Its a nice plugin to use fontawesome in Sketch for developers and designers.",
   "version" : "1.0",
   "commands" : [
@@ -18,11 +18,18 @@
       "identifier" : "add_icon"
     },
     {
-      "script" : "add_icon_list.cocoascript",
+      "script" : "add_icon_combobox.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl c",
+      "name" : "Add an icon with combobox",
+      "identifier" : "add_icon_combobox"
+    },
+    {
+      "script" : "add_icon_radiolist.cocoascript",
       "handler" : "onRun",
       "shortcut" : "cmd ctrl l",
-      "name" : "Add an icon from list",
-      "identifier" : "add_icon_list"
+      "name" : "Add an icon with list",
+      "identifier" : "add_icon_radiolist"
     }
   ],
   "menu": {
@@ -30,7 +37,8 @@
     "items": [
       "learn_icon_name",
       "add_icon",
-      "add_icon_list"
+      "add_icon_combobox",
+      "add_icon_radiolist"
     ],
   },
   "identifier" : "com.keremciu.sketch.fontawesome",
