@@ -52,11 +52,13 @@ Do you have any suggestion? it would be so nice.
 
 # Next steps
 
-- I'm trying to build a Clean UI for archive view. We'll select icons from the tableview(nstableview).
+~~- I'm trying to build a Clean UI for archive view. We'll select icons from the tableview(nstableview).~~
 - I'm trying to create a new plugin, it will include material-icon-font and svg icon font parser. 
 - I will add "icon categories" in "Add icon from Archive". I'll be using it to filter icons.
-- I need to delete unnecessary codes.
-- I need to add more annotations and good instructions.
+~~- I need to delete unnecessary codes.~~
+~~- I need to add more annotations and good instructions.~~
+
+Material icon font is coming soon.
 
 # License
 
