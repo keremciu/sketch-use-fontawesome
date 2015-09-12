@@ -3,12 +3,7 @@ sketch-use-fontawesome
 
 Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
-# New feature: Select an icon from Archive
-![demo][newdemo-image]
-> Note: yep, I know it doesn't look good but I found this solution(NsComboBox) to choose an icon.
-
-
-=================
+# New UI and commands
 ![demo][demo-image]
 
 # Features
@@ -16,12 +11,12 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 > `A Problem of the Designer:` 
 > When you want to add an icon from fontawesome, you don't need to find a cheatsheet to copy it in your design.
 
-- You can easily add it with alias of the icon.
+- You can easily add it now.
 
 > `A Problem of the Developer:` 
 > When you want to learn the alias of the icon which is added from a designer, you don't need to look all of 585+ icons to find it.
 
-- You can easily learn it with one click.
+- You can easily learn it now.
 
 # Install
 
@@ -32,6 +27,10 @@ Its a nice plugin to use fontawesome in Sketch for developers and designers.
 # Dependencies
 
 1. You need to install fontawesome font to your os system. You can download from here: https://github.com/FortAwesome/Font-Awesome/raw/master/fonts/FontAwesome.otf
+
+# Problem
+
+It's not working with sketch beta. Because sketch beta is not supporting NSFont, I'll be fix it when it will be finished.
 
 # Usage
 
@@ -66,5 +65,4 @@ Do you have any suggestion? it would be so nice.
 
 MIT
 
-[demo-image]: http://i.imgur.com/7Hbgdc2.gif
-[newdemo-image]: http://i.imgur.com/14cAdjI.gif
+[demo-image]: http://i.imgur.com/4bg2Es9.gif
