@@ -1,0 +1,39 @@
+{
+  "name" : "Font Awesome",
+  "description" : "Its a nice plugin to use fontawesome in Sketch for developers and designers.",
+  "version" : "1.0",
+  "commands" : [
+    {
+      "script" : "learn_icon_name.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl u",
+      "name" : "What is the icon's name?",
+      "identifier" : "learn_icon_name"
+    },
+    {
+      "script" : "add_icon.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl i",
+      "name" : "Add an icon with name",
+      "identifier" : "add_icon"
+    },
+    {
+      "script" : "add_icon_list.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl l",
+      "name" : "Add an icon from list",
+      "identifier" : "add_icon_list"
+    }
+  ],
+  "menu": {
+    "title" : "Font Awesome",
+    "items": [
+      "learn_icon_name",
+      "add_icon",
+      "add_icon_list"
+    ],
+  },
+  "identifier" : "com.keremciu.sketch.fontawesome",
+  "author" : "Kerem Sevencan",
+  "authorEmail" : "info@kerem.ws",
+}
