@@ -1,3 +1,5 @@
+This plugin is not developing no more. You can use https://github.com/keremciu/sketch-iconfont plugin, its a maintainable version.
+
 Its a nice plugin to use fontawesome in Sketch for developers and designers.
 
 ## Update: New UI and commands
