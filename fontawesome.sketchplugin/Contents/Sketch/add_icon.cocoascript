@@ -53,7 +53,9 @@ var onRun = function(context) {
       var icon_name     = finded_icon.alias
       var get_selected_icon = Library.escapeUnicode('\\u' + finded_icon.unicode)
       // select the text layer
-      var textLayer = page.selectedLayers().firstObject()
+      var selection = doc ? doc.findSelectedLayers() : nil
+      var textLayer = [selection firstObject]
+      textLayer = textLayer instanceof MSTextLayer ? textLayer : nil
       // if is it a text layer run it. if it is not give an error.
       if (textLayer && [textLayer stringValue]) {
         // set selected icon as the layer's value
