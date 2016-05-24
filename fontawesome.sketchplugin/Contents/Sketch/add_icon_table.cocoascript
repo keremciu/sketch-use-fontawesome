@@ -78,7 +78,9 @@ var onRun = function(context) {
   // if is the response is ok, add icon to the layer
   if (response == NSOKButton) {
     // select the text layer
-    var textLayer = page.selectedLayers().firstObject()
+    var selection = doc ? doc.findSelectedLayers() : nil
+	var textLayer = [selection firstObject]
+	textLayer = textLayer instanceof MSTextLayer ? textLayer : nil
 
     // if is it a text layer run it. if it is not give an error.
     if (textLayer && [textLayer stringValue]) {
