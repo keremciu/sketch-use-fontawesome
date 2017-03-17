@@ -12,7 +12,7 @@ var onRun = function(context) {
   var icon_list = Library.iconValues(icons)
   var icon_count = icon_list[0].length;
   // row count and height calculate
-  var row_count = Math.ceil(icon_count / 15);
+  var row_count = Math.ceil(icon_count / 11);
   var list_height = Math.ceil(row_count * 50);
 
   // create a wrapper window
@@ -32,7 +32,7 @@ var onRun = function(context) {
   [prototype setBezelStyle:NSThickSquareBezelStyle]
 
   var iconMatrix = [[NSMatrix alloc] initWithFrame:NSMakeRect(0, 45, 545, list_height)
-    mode:NSListModeMatrix prototype:prototype numberOfRows:row_count numberOfColumns:15];
+    mode:NSListModeMatrix prototype:prototype numberOfRows:row_count numberOfColumns:11];
   var cellArray = [iconMatrix cells];
   [iconMatrix setFont:[NSFont fontWithName:@'FontAwesome' size:20.0]]
   [iconMatrix setCellSize:NSMakeSize(47, 47)];
